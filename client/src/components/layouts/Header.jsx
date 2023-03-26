@@ -1,6 +1,11 @@
 import { Fragment, useState } from 'react'
 import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { UserOutlined } from '@ant-design/icons';
+import { Form, Input } from "antd";
+import { BiSearch } from "react-icons/bi"
+
+
 
 const navigation = [
     { name: 'About', href: '#' },
@@ -35,12 +40,29 @@ export default function Header() {
                             </a>
                         ))}
                     </div>
-                    <div>
-                    <a href="#" className="text-sm font-semibold leading-6 text-white">
+                    <div className='flex justify-center items-center'>
+                        {/* <Form> */}
+                            {/* <Form.Item className="mb-0 px-2"> */}
+                                <Input
+                                    name="searchData"
+                                    style={{ width: 200}}
+                                    prefix={<BiSearch className="mr-2" color='white' />}
+                                    className="text-sm outline-none rounded-full placeholder-gray-500 placeholder-opacity-0"
+                                    placeholder="Search Plant..."
+                                    allowClear
+                                    bordered={false}
+                                    // onKeyDown={handleOnKeyDown}
+                                ></Input>
+                            {/* </Form.Item> */}
+                        {/* </Form> */}
+                        <div>
+                        <a href="#" className="text-sm font-semibold leading-6 text-white flex items-center gap-2">
+                            <UserOutlined />
                             Log in <span aria-hidden="true">&rarr;</span>
                         </a>
+                        </div>
                     </div>
-                    
+
                 </nav>
                 <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                     <div className="fixed inset-0 z-10" />
