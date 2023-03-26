@@ -34,10 +34,13 @@ export default function Header() {
                                 {item.name}
                             </a>
                         ))}
-                        <a href="#" className="text-sm font-semibold leading-6 text-white">
+                    </div>
+                    <div>
+                    <a href="#" className="text-sm font-semibold leading-6 text-white">
                             Log in <span aria-hidden="true">&rarr;</span>
                         </a>
                     </div>
+                    
                 </nav>
                 <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                     <div className="fixed inset-0 z-10" />
